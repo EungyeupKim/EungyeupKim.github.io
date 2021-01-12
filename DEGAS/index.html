@@ -1,1 +1,182 @@
-Hello World
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>DEGAS: Deep Edge-Aware Interactive Colorization against Color Bleeding Effects</title>
+    <style type="text/css">
+    .center {
+        text-align: center;
+    }
+
+    .lead {
+        font-size: 1.0rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    .author {
+        font-size: 1.1rem;
+    }
+
+    .figure-caption {
+        color: #6c757d;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <center>
+                    <h2 style="margin: 20px;">DEGAS: Deep Edge-Aware Interactive Colorization <br> against Color Bleeding Effects</h2>
+                    <h4>Under Review</h4>
+                    <!-- author -->
+                    <div class="row author">
+                        <div class="col-sm-3">
+                            <a href="https://github.com/EungyeupKim">Eungyeup Kim*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://github.com/niceDuckgu">Sanghyeon Lee*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://github.com/atjeong">Jeonghoon Park*</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://www.linkedin.com/in/somi-choi-931093156/?trk=public_profile_browsemap_profile-result-card_result-card_full-click">Somi Choi</a>
+                            <br>
+                            KAIST
+                        </div>
+                        <div class="col-sm-3">
+                            Choonghyun Seo</a>
+                            <br>
+                            Naver Webtoon
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>
+                            <br>
+                            KAIST
+                        </div>
+                    </div>
+                </center>
+                <!-- Teaser -->
+                <center>
+                    <figure class="figure">
+                        <img src="./figs/main_figure.png" class="figure-img img-fluid" alt="Responsive image" style="margin:20px 0px;">
+                        <figcaption class="figure-caption text-justify">
+                            The image in the upper-left corner of each box contains the color bleeding effects, followed by its edge-enhanced result on the right, respectively. 
+                            Small figures located below them provide a closer look at the edge enhancement. 
+                            These images are collected from \url{https://unsplash.com}.
+                        </figcaption>
+                    </figure>
+                </center>
+                <!-- Abstract -->
+                <hr>
+                <div>
+                    <h3>Video</h3>
+                    <center>
+                        <iframe width="709" height="399" src="https://www.youtube.com/embed/iFQxQuL_x9M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </center>
+                </div>
+                <hr>
+                <div>
+                    <h3>Abstract</h3>
+                    <p class="lead text-justify">
+                        Despite the impressive performance in deep image colorization, existing methods still suffer from a critical problem called the color bleeding artifact. 
+                        This issue, especially with the fine edges existing between adjoining objects, makes the colorization outputs less realistic, limiting their application to practical use. 
+                        This paper proposes a novel user-interactive edge-enhancing colorization technique that takes a user-drawn scribble as input. 
+                        This approach, which we call DEGAS, refines the representations of the backbone network by providing the edge-aware information in a target location. 
+                        DEGAS encourages the model to generate a colorization output that is well-aligned with the semantic boundaries at the end. By leveraging automatically generated pseudo-scribbles as additional given condition during training, our approach can properly reflect the user's intent on where to correct in the edge-bleeding image. 
+                        Quantitative and qualitative experimental results demonstrate that our proposed approach effectively improves the colorization of color-bleeding regions in various datasets.
+                    </p>
+                </div>
+                <hr>
+<!--                <div>-->
+<!--                    <h3>Paper and Supplementary Material</h3>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-sm-3">-->
+<!--                            <img src="./figs/paper.png" class="img-fluid border" alt="" style="margin:20px;">-->
+<!--                        </div>-->
+<!--                        <div class="col" style="margin-top: auto; margin-bottom: auto;">-->
+<!--                            <div class="align-middle">-->
+<!--                                <a href="">[Paper]</a>-->
+<!--                                <p class="lead">-->
+<!--                                    Under Review. <br>-->
+<!--                                    Kangyeol Kim*, Sunghyun Park*, Junsoo Lee, Joonseok Lee, Sookyung Kim, Jaegul Choo, and Edward Choi.-->
+<!--                                    "Continuous-Time Video Generation via Learning Motion Dynamics with Neural ODE"-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <hr>-->
+                <div>
+                    <h3>Method overview</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/method_overview.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    An overview of DEGAS.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                </div>
+                <hr>
+                <div>
+                    <h3>Additional Results</h3>
+                    <center>
+                        <figure class="figure">
+                            <img src="./figs/qual1.png" class="figure-img img-fluid" alt="Responsive image">
+                            <figcaption class="figure-caption text-justify">
+                                <center>
+                                    Figure: Additional qualitative results of DEGAS.
+                                </center>
+                            </figcaption>
+                        </figure>
+                    </center>
+                    <center>
+                          <figure class="figure">
+                              <img src="./figs/qual2.png" class="figure-img img-fluid" alt="Responsive image">
+                              <figcaption class="figure-caption text-justify">
+                                  <center>
+                                      Figure: Qualitative comparison of DEGAS against the baselines.
+                                  </center>
+                              </figcaption>
+                          </figure>
+                      </center>
+<!--                    <center>-->
+<!--                        <figure class="figure">-->
+<!--                            <img src="./figs/additional_results3.png" class="figure-img img-fluid" alt="Responsive image">-->
+<!--                            <figcaption class="figure-caption text-justify">-->
+<!--                                <center>-->
+<!--                                    Figure: Qualitative comparison of the baselines (1024x768).-->
+<!--                                </center>-->
+<!--                            </figcaption>-->
+<!--                        </figure>-->
+<!--                    </center>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
