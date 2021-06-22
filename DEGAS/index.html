@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>DEGAS: Deep Edge-Aware Interactive Colorization against Color Bleeding Effects</title>
+    <title>Deep Edge-Aware Interactive Colorization against Color Bleeding Effects</title>
     <style type="text/css">
     .center {
         text-align: center;
@@ -34,7 +34,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <center>
-                    <h2 style="margin: 20px;">DEGAS: Deep Edge-Aware Interactive Colorization <br> against Color Bleeding Effects</h2>
+                    <h2 style="margin: 20px;">Deep Edge-Aware Interactive Colorization <br> against Color Bleeding Effects</h2>
                     <h4>Under Review</h4>
                     <!-- author -->
                     <div class="row author">
@@ -86,19 +86,20 @@
                 <div>
                     <h3>Video</h3>
                     <center>
-                        <iframe width="709" height="399" src="https://www.youtube.com/embed/iFQxQuL_x9M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="709" height="399" src="https://youtu.be/GKMnHFua0N4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </center>
                 </div>
                 <hr>
                 <div>
                     <h3>Abstract</h3>
                     <p class="lead text-justify">
-                        Despite the impressive performance in deep image colorization, existing methods still suffer from a critical problem called the color bleeding artifact. 
-                        This issue, especially with the fine edges existing between adjoining objects, makes the colorization outputs less realistic, limiting their application to practical use. 
-                        This paper proposes a novel user-interactive edge-enhancing colorization technique that takes a user-drawn scribble as input. 
-                        This approach, which we call DEGAS, refines the representations of the backbone network by providing the edge-aware information in a target location. 
-                        DEGAS encourages the model to generate a colorization output that is well-aligned with the semantic boundaries at the end. By leveraging automatically generated pseudo-scribbles as additional given condition during training, our approach can properly reflect the user's intent on where to correct in the edge-bleeding image. 
-                        Quantitative and qualitative experimental results demonstrate that our proposed approach effectively improves the colorization of color-bleeding regions in various datasets.
+                        Deep image colorization networks often suffer from the color-bleeding artifact, a problematic color spreading near the boundaries between adjacent objects.
+                        The color-bleeding artifacts debase the reality of generated outputs, limiting the applicability of colorization models on a practical application.
+                        Although previous approaches have tackled this problem in an automatic manner, they often generate imperfect outputs because their enhancements are available only in limited cases, such as having a high contrast of gray-scale value in an input image.
+                        Instead, leveraging user interactions would be a promising approach, since it can help the edge correction in the desired regions.
+                        In this paper, we propose a novel edge-enhancing framework for the regions of interest, by utilizing user scribbles that indicate where to enhance.
+                        Our method requires minimal user effort to obtain satisfactory enhancements.
+                        Experimental results on various datasets demonstrate that our interactive approach has outstanding performance in improving color-bleeding artifacts against the existing baselines.
                     </p>
                 </div>
                 <hr>
@@ -128,7 +129,7 @@
                             <img src="./figs/method_overview.png" class="figure-img img-fluid" alt="Responsive image" style="margin:0px;">
                             <figcaption class="figure-caption text-justify">
                                 <center>
-                                    An overview of DEGAS.
+                                    An overview of our proposed method.
                                 </center>
                             </figcaption>
                         </figure>
@@ -139,24 +140,34 @@
                     <h3>Additional Results</h3>
                     <center>
                         <figure class="figure">
-                            <img src="./figs/qual1.png" class="figure-img img-fluid" alt="Responsive image">
+                            <img src="./figs/zhang_project.png" class="figure-img img-fluid" alt="Responsive image">
                             <figcaption class="figure-caption text-justify">
                                 <center>
-                                    Figure: Additional qualitative results of DEGAS.
+                                    Figure: Qualitative results of edge-enhanced colorization results from our method applied to Zhang et al.
                                 </center>
                             </figcaption>
                         </figure>
                     </center>
                     <center>
                           <figure class="figure">
-                              <img src="./figs/qual2.png" class="figure-img img-fluid" alt="Responsive image">
+                              <img src="./figs/su_project.png" class="figure-img img-fluid" alt="Responsive image">
                               <figcaption class="figure-caption text-justify">
                                   <center>
-                                      Figure: Qualitative comparison of DEGAS against the baselines.
+                                      Figure: Qualitative results of edge-enhanced colorization results from our method applied to Su et al.
                                   </center>
                               </figcaption>
                           </figure>
-                      </center>
+                    </center>
+                    <center>
+                          <figure class="figure">
+                              <img src="./figs/baseline_project.png" class="figure-img img-fluid" alt="Responsive image">
+                              <figcaption class="figure-caption text-justify">
+                                  <center>
+                                      Figure: Qualitative comparisons of our method against existing colorization baselines.
+                                  </center>
+                              </figcaption>
+                          </figure>
+                    </center>
 <!--                    <center>-->
 <!--                        <figure class="figure">-->
 <!--                            <img src="./figs/additional_results3.png" class="figure-img img-fluid" alt="Responsive image">-->
