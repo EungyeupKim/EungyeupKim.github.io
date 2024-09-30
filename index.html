@@ -80,8 +80,8 @@
               <p style="text-align:center">
                 eungyeuk (at) cs (dot) cmu (dot) edu
               </p>
-                <p>I am a second-year PhD student in Computer Science Department at Carnegie Mellon University, advised by Prof. <a href="https://zicokolter.com/">Zico Kolter</a>.
-                My research interest lies in robust ML under distribution shifts and foundation models.
+                <p>I am a third-year PhD student in Computer Science Department at Carnegie Mellon University, advised by Prof. <a href="https://zicokolter.com/">Zico Kolter</a>.
+                My research interest lies in data-centric ML for building robust and safe foundation models.
                 I did my Master's studies at Korea Advanced Institute of Science and Technology (KAIST) under Prof. <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>.</p>
               <p style="text-align:center">
                 <a href="https://scholar.google.com/citations?user=RtxkcwYAAAAJ&hl=en">Google Scholar</a>
@@ -118,12 +118,14 @@
                   src="images/tta_agl.png" alt="TTAAGL" width="100%" style="border-radius:15px"></a>
             <td width="67%" valign="top">
               <p><a href="https://arxiv.org/abs/2310.04941" target="_blank" id="ttaagl">
-                  <heading>Reliable Test-Time Adaptation via Agreement-on-the-Line
+                  <heading>Test-Time Adaptation Induces Stronger Accuracy and Agreement-on-the-Line
                   </heading>
                 </a><br>
                 <strong>Eungyeup Kim</strong>, <a href="https://eric-mingjie.github.io/" target="_blank"> Mingjie Sun
+                  </a>, <a href="https://kebaek.github.io/" target="_blank"> Christina Baek
                   </a>, <a href="https://www.cs.cmu.edu/~aditirag/" target="_blank"> Aditi Raghunathan</a>, <a
                   href="https://zicokolter.com/" target="_blank"> Zico Kolter</a><br>
+                  Neural Information Processing Systems (<strong>NeurIPS</strong>) 2024,<br>
                   Neural Information Processing Systems (<strong>NeurIPS</strong>) 2023 Workshop on Distribution Shifts (DistShift).<br>
               </p>
 
@@ -132,14 +134,24 @@
                 <a href="https://arxiv.org/abs/2310.04941" target="_blank">paper</a>
                 <br>
 
-                <p align="justify"> <i id="ttaaglabs">Test-time adaptation (TTA) methods aim to improve robustness to distribution shifts by adapting models using unlabeled data from the shifted test distribution.
-                        However, there remain unresolved challenges that undermine the reliability of TTA, which include difficulties in evaluating TTA performance, miscalibration after TTA, and  unreliable hyperparameter tuning for adaptation.
-                        In this work, we make a notable and surprising observation that TTAed models strongly show the agreement-on-the-line phenomenon (Baek et al., 2022) across a wide range of distribution shifts.
-                        We find such linear trends occur consistently in a wide range of models adapted with various hyperparameters, and persist in distributions where the phenomenon fails to hold in vanilla models (i.e., before adaptation).
-                        We leverage these observations to make TTA methods more reliable in three perspectives: (i) estimating OOD accuracy (without labeled data) to determine when TTA helps and when it hurts, (ii)
-                        calibrating TTAed models without label information, and (iii) reliably determining hyperparameters for TTA without any labeled validation data.
-                        Through extensive experiments, we demonstrate that various TTA methods can be precisely evaluated, both in terms of their improvements and degradations.
-                        Moreover, our proposed methods on unsupervised calibration and hyperparameters tuning for TTA achieve results close to the ones assuming access to ground-truth labels, in terms of both OOD accuracy and calibration error.</i>
+                <p align="justify"> <i id="ttaaglabs">Recently, Miller et al. (2021) and Baek et al. (2022) empirically
+                    demonstrated strong linear correlations between in-distribution (ID) versus out-of-distribution (OOD)
+                    accuracy and agreement. These phenomena, termed accuracy-on-the-line (ACL) and agreement-on-the-line
+                    (AGL) furthermore often exhibited the same slope and bias of the correlations, enabling OOD model
+                    selection and performance estimation without labeled data. However, the phenomena also break for
+                    certain shift, such as CIFAR10-C Gaussian Noise, posing a critical bottleneck in accurately predicting
+                    OOD performance without access to labels. In this paper, we make a key finding that recent OOD test-time
+                    adaptation methods not only improve OOD performance, but drastically strengthen the AGL and ACL phenomenon,
+                    even in shifts that initially observed very weak correlations. To analyze this, we revisit the theoretical
+                    conditions established by Miller et al. (2021), which demonstrate that ACL appears if the distributions
+                    only shift in mean and covariance scale in Gaussian data. We find that these theoretical conditions hold
+                    when deep networks are adapted to CIFAR10-C data --- models embed the initial data distribution, with
+                    complex shifts, into those only with a singular ``scaling'' variable in the feature space. Building on
+                    these stronger linear trends, we demonstrate that combining TTA and AGL-based methods can predict the
+                    OOD performance with higher precision than previous methods for a broader set of distribution shifts.
+                    Furthermore, we discover that models adapted with different hyperparameters settings exhibit the same
+                    linear trends. This allows us to perform hyperparameter selection on OOD data without relying on any
+                    labeled data.</i>
                 </p>
 
           </tr>
