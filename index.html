@@ -80,8 +80,8 @@
               <p style="text-align:center">
                 eungyeuk (at) cs (dot) cmu (dot) edu
               </p>
-                <p>I am a third-year PhD student in Computer Science Department at Carnegie Mellon University, advised by Prof. <a href="https://zicokolter.com/">Zico Kolter</a>.
-                My research interest lies in data-centric ML for building robust and safe foundation models.
+                <p>I am a final-year PhD student in Computer Science Department at Carnegie Mellon University, advised by Prof. <a href="https://zicokolter.com/">Zico Kolter</a>.
+                My research interest lies in Eval + Training for AI safety and reliability.
                 I did my Master's studies at Korea Advanced Institute of Science and Technology (KAIST) under Prof. <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>.</p>
               <p style="text-align:center">
                 <a href="https://scholar.google.com/citations?user=RtxkcwYAAAAJ&hl=en">Google Scholar</a>
@@ -123,6 +123,46 @@
         </table>
 
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+            <td width="33%" valign="top" align="center"><a href="https://arxiv.org/abs/2310.04941" target="_blank"><img
+                  src="images/tta_agl.png" alt="TTAAGL" width="100%" style="border-radius:15px"></a>
+            <td width="67%" valign="top">
+              <p><a href="https://arxiv.org/abs/2605.11209" target="_blank" id="ttaagl">
+                  <heading>Measuring Nines of Reliability: Sample-Efficient LLM Evaluation on Saturated GSM Benchmark
+                  </heading>
+                </a><br>
+                <strong>Eungyeup Kim</strong>, Chenchen Gu, Vashisth Tiwari, Zico Kolter</a><br>
+                  International Conference on Machine Learning (<strong>ICML</strong>) 2026 Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWild).<br>
+              </p>
+
+              <div class="paper" id="ttaagl">
+                <a href="javascript:toggleblock('ttaaglabs')">abstract</a> /
+                <a href="https://arxiv.org/abs/2605.11209" target="_blank">paper</a>
+                <br>
+
+                <p align="justify"> <i id="ttaaglabs">While existing benchmarks demonstrate the nearperfect performance
+                    of large language models (LLMs) on various tasks, this apparent saturation often obscures the need
+                    for rigorous evaluation of their reliability. In real-world deployment, however, achieving high
+                    reliability, where each added ‘nine’ (e.g., “four-nines” (99.99%) vs. “three-nines” (99.9%)) is
+                    critical, as this gap yields an order-of-magnitude increase in failures, catastrophic in
+                    reliability-critical applications. Still, estimating such a rare failure probability with tight
+                    confidence bounds requires prohibitively large LLM inference sizes, making standard Monte Carlo
+                    evaluation infeasible under limited compute budgets. In this paper, we observe that, on
+                    parameterized GSM8K math-reasoning tasks, LLM failures exhibit strong systematic patterns: across
+                    these parameterized input spaces, a small subset of inputs disproportionately accounts for the
+                    majority of failures. Leveraging this observation, we propose to learn a sampling distribution
+                    concentrated on failure-prone inputs via the cross-entropy method (CEM). We evaluate our
+                    framework on three LLMs, Qwen2.5-Math-7BInstruct, gpt-oss-20b-low, and Gemini 2.5 Flash Lite,
+                    across parameterized GSM8K templates and achieve up to 156.22× reduction in required inferences
+                    compared to naive uniform sampling. Our estimates reveal that models with indistinguishable
+                    accuracy on standard benchmarks can differ substantially in estimated failure rates, underscoring
+                    that reliability is a distinct and measurable axis of model quality. Our simple framework
+                    takes a first step toward evaluating high-reliability regimes of LLMs on saturated GSM benchmarks,
+                    a distinct and underexplored dimension of evaluation beyond existing benchmarks.</i>
+                </p>
+
+          </tr>
+
             <tr>
             <td width="33%" valign="top" align="center"><a href="https://arxiv.org/abs/2310.04941" target="_blank"><img
                   src="images/tta_agl.png" alt="TTAAGL" width="100%" style="border-radius:15px"></a>
